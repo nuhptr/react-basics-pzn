@@ -12,7 +12,11 @@ const DUMMY_TODO = [
 ]
 
 export default function TodoList() {
-    const todos = DUMMY_TODO.map((todo) => <Todo key={todo.id} {...todo} />)
-
-    return <ul>{todos}</ul>
+    return (
+        <ul>
+            {DUMMY_TODO.map((todo) => (
+                <Todo key={todo.id} {...todo} />
+            ))}
+        </ul>
+    )
 }
