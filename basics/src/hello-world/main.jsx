@@ -6,6 +6,8 @@ import HelloWorld from "./HelloWorld"
 import TodoList from "../todolist/TodoList"
 import Table from "../table/Table"
 import AlertButton from "../button/AlertButton"
+import MyButton from "../button/MyButton"
+import Toolbar from "../button/Toolbar"
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
@@ -15,6 +17,14 @@ createRoot(document.getElementById("root")).render(
             <Table />
 
             <AlertButton message="You click me!" />
+            <MyButton text="Click Me!" onSmash={() => alert("You smash me!")} />
+
+            <Toolbar
+                onClick={(e) => {
+                    e.stopPropagation()
+                    alert("You click toolbar!")
+                }}
+            />
         </Container>
     </StrictMode>
 )
