@@ -1,22 +1,21 @@
-import { useState } from "react"
+// import { useState } from "react"
+import { useImmer } from "use-immer"
 
 export default function ContactForm() {
-    const [contact, setContact] = useState({
+    const [contact, setContact] = useImmer({
         name: "",
         message: "",
     })
 
     const handleNameChange = (event) => {
-        setContact({
-            ...contact,
-            name: event.target.value,
+        setContact((draft) => {
+            draft.name = event.target.value
         })
     }
 
     const handleMessageChange = (event) => {
-        setContact({
-            ...contact,
-            message: event.target.value,
+        setContact((draft) => {
+            draft.message = event.target.value
         })
     }
 
